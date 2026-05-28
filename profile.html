@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Profile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #4CAF50, #2196F3, #00bcd4, #2ecc71);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+
+    /* Animated background */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      width: 420px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      animation: slideUp 1s ease forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    /* Card entrance animation */
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #444;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    /* Input focus effect */
+    input:focus, textarea:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 8px rgba(76,175,80,0.4);
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(45deg, #4CAF50, #2ecc71);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    /* Button animation */
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Create Your Profile 🎓</h2>
+  <form id="profileForm">
+
+    <label>Full Name</label>
+    <input type="text" id="name" required>
+
+    <label>Email</label>
+    <input type="email" id="email" required>
+
+    <label>Course</label>
+    <input type="text" id="course">
+
+    <label>About You</label>
+    <textarea id="bio"></textarea>
+
+    <button type="submit">Save Profile</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("profileForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+    localStorage.setItem("course", document.getElementById("course").value);
+    localStorage.setItem("bio", document.getElementById("bio").value);
+
+    alert("Profile Saved Successfully!");
+    window.location.href = "view_profile.html";
+});
+</script>
+
+</body>
+</html>

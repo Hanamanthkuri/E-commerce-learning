@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - E-Learning Site</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #4CAF50, #2196F3, #00bcd4, #2ecc71);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+        }
+
+        /* Animated background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar */
+        nav {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeDown 0.8s ease;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            padding: 30px;
+            gap: 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 22%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        button {
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #4CAF50, #2ecc71);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        a button {
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>🎓 E-Learning</h2>
+        <div>
+            <a href="home.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+            <a href="view_profile.html">Profile</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>📚 Course Bar</h3>
+            <p>Quick access to all available courses.</p>
+            <a href="courses.html"><button>View All Courses</button></a>
+        </div>
+
+        <div class="main">
+            <h2>Welcome to Your Dashboard 👋</h2>
+            <p>Explore our e-learning platform. Access courses, register for new ones, and track your progress easily.</p>
+
+            <h3>📖 Course Content Overview</h3>
+            <p>Our courses cover programming, web development, design, and more. Learn at your own pace with guided lessons.</p>
+
+            <h3>📝 Course Registration</h3>
+            <p>Ready to start learning?</p>
+            <a href="courses.html"><button>Register for Courses</button></a>
+        </div>
+    </div>
+
+</body>
+</html>
